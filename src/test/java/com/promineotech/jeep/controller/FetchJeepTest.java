@@ -87,7 +87,7 @@ config = @SqlConfig(encoding = "utf-8"))
    //And: an error message is returned
   Map<String, Object> error = response.getBody();
 
-  assertErrorMessageValid(uri, error, HttpStatus.NOT_FOUND);
+  assertErrorMessageValid(error, HttpStatus.NOT_FOUND);
   }
 
   //WEEK 15: test that an invalid value is supplied
@@ -108,7 +108,7 @@ config = @SqlConfig(encoding = "utf-8"))
    //And: an error message is returned
   Map<String, Object> error = response.getBody();
 
-  assertErrorMessageValid(uri, error, HttpStatus.BAD_REQUEST);
+  assertErrorMessageValid(error, HttpStatus.BAD_REQUEST);
   }
   }
   
@@ -154,7 +154,7 @@ config = @SqlConfig(encoding = "utf-8"))
      //And: an error message is returned
     Map<String, Object> error = response.getBody();
 
-    assertErrorMessageValid(uri, error, HttpStatus.INTERNAL_SERVER_ERROR);
+    assertErrorMessageValid(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
   }

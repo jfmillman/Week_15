@@ -31,7 +31,7 @@ public class DefaultJeepSalesDao implements JeepSalesDao {
     log.debug("DAO: model={}, trim={}", model, trim);
     
     String sql = ""
-        + "SELCET * "
+        + "SELECT * "
         + "FROM models "
         + "WHERE model_id = :model_id AND trim_level = :trim_level";
     

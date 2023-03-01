@@ -40,13 +40,15 @@ public class fetchJeepTestSupport extends BaseTest{
     return list;
   }
   
-  protected void assertErrorMessageValid(String uri, Map<String, Object> error,  HttpStatus status) {
+  protected void assertErrorMessageValid(Map<String, Object> error,  HttpStatus status) {
     assertThat(error)
       .containsKey("message")
       .containsEntry("status code", status.value())
-      .containsEntry(uri, "/jeeps")
+      .containsKey("uri")
       .containsKey("timestamp")
       .containsEntry("reason", status.getReasonPhrase());
+    
+   assertThat(error.get("uri").toString()).contains("/jeeps"); 
   }
   
 }
