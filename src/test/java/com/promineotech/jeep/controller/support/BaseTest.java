@@ -25,8 +25,13 @@ public class BaseTest {
   
   
  //retrieves the URI
-  protected String getBaseUri() {
+  protected String getBaseUriForJeeps() {
     return String.format("http://localhost:%d/jeeps", serverPort);
+  }
+  
+  //WEEK 16: this will return the URI for orders
+  protected String getBaseUriForOrders() {
+    return String.format("http://localhost:%d/orders", serverPort);
   }
 
 }
